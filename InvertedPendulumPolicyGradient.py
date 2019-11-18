@@ -36,16 +36,28 @@ class PolicyNetwork(nn.Module):
         return x
 
     def get_action(self, state):
+
+        #unsqueeztakes you from this [-0.00417724 -0.40476312  0.06895009  0.69969184] to this
+        # [[-0.0042, -0.4048,  0.0690,  0.6997]], torch.from_numpy transforms it into a tensor
         state = torch.from_numpy(state).float().unsqueeze(0)
+
+        #forward(Variable(state)) delivers a 2-d prob. dist. [[0.4980, 0.5020]].
         probs = self.forward(Variable(state))
+        #probs.detach().numpy() transforms probs to numpy
+        #np.squeeze(probs.detach().numpy()) takes you from [[0.5653084 0.4346916]] to [0.5653084 0.4346916]
+        #np.random.choice(actions, p) gives you a non-uniform random sample from the actions array
         highest_prob_action = np.random.choice(self.num_actions, p=np.squeeze(probs.detach().numpy()))
+        #torch.log(probs.squeeze(0)[highest_prob_action]) takes probs, unsqueezes it, searches for highest
+        #probability and computes its logarithm.
         log_prob = torch.log(probs.squeeze(0)[highest_prob_action])
+
         return highest_prob_action, log_prob
 
 
 def update_policy(policy_network, rewards, log_probs):
     discounted_rewards = []
 
+    #### Compute Gt term and append it to a list####
     for t in range(len(rewards)):
         Gt = 0
         pw = 0
@@ -53,12 +65,16 @@ def update_policy(policy_network, rewards, log_probs):
             Gt = Gt + GAMMA ** pw * r
             pw = pw + 1
         discounted_rewards.append(Gt)
+    ####################################
 
+    ###transform to tensor and normalize the rewards tensor
     discounted_rewards = torch.tensor(discounted_rewards)
     discounted_rewards = (discounted_rewards - discounted_rewards.mean()) / (
                 discounted_rewards.std() + 1e-9)  # normalize discounted rewards
 
     policy_gradient = []
+    print(zip(log_probs, discounted_rewards))
+    print(len(log_probs), len(discounted_rewards))
     for log_prob, Gt in zip(log_probs, discounted_rewards):
         policy_gradient.append(-log_prob * Gt)
 
