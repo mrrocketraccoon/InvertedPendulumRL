@@ -3,11 +3,10 @@ import gym
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from DDPG import DDPGagent
+from ddpg import DDPGagent
 from utils import *
 
-env = NormalizedEnv(gym.make("Pendulum-v0"))
-
+env = gym.make("Pendulum-v0")
 agent = DDPGagent(env)
 noise = OUNoise(env.action_space)
 batch_size = 128
@@ -36,9 +35,9 @@ for episode in range(50):
                 "episode: {}, reward: {}, average _reward: {} \n".format(episode, np.round(episode_reward, decimals=2),
                                                                          np.mean(rewards[-10:])))
             break
-
     rewards.append(episode_reward)
     avg_rewards.append(np.mean(rewards[-10:]))
+    env.render()
 
 plt.plot(rewards)
 plt.plot(avg_rewards)

@@ -73,17 +73,14 @@ def update_policy(policy_network, rewards, log_probs):
                 discounted_rewards.std() + 1e-9)  # normalize discounted rewards
 
     policy_gradient = []
-    print(zip(log_probs, discounted_rewards))
-    print(len(log_probs), len(discounted_rewards))
     for log_prob, Gt in zip(log_probs, discounted_rewards):
         policy_gradient.append(-log_prob * Gt)
-
-    policy_network.optimizer.zero_grad()
+    policy_network.optimizer.zero_grad() ###clears gradients of optimized tensor
+    # takes list of  tensors tensor(0.8492, grad_fn=<MulBackward0>), stacks them on top of each other
+    # and retrieves single tensor(0.1396, grad_fn=<SumBackward0>) with sum of list elements.
     policy_gradient = torch.stack(policy_gradient).sum()
     policy_gradient.backward()
     policy_network.optimizer.step()
-
-
 
 policy_net = PolicyNetwork(env.observation_space.shape[0], env.action_space.n, 128)
 
@@ -99,7 +96,7 @@ for episode in range(max_episode_num):
     rewards = []
 
     for steps in range(max_steps):
-        action, log_prob = policy_net.get_action(state)
+        action, log_prob = policy_net.get_action(state) #retrieve best action and log_prob from policy
         new_state, reward, done, _ = env.step(action)
         log_probs.append(log_prob)
         rewards.append(reward)
@@ -109,8 +106,7 @@ for episode in range(max_episode_num):
             numsteps.append(steps)
             avg_numsteps.append(np.mean(numsteps[-10:]))
             all_rewards.append(np.sum(rewards))
-            if episode % 1 == 0:
-                sys.stdout.write("episode: {}, total reward: {}, average_reward: {}, length: {}\n".format(episode,
+            sys.stdout.write("episode: {}, total reward: {}, average_reward: {}, length: {}\n".format(episode,
                                                                                                           np.round(
                                                                                                               np.sum(
                                                                                                                   rewards),
@@ -122,8 +118,8 @@ for episode in range(max_episode_num):
                                                                                                               decimals=3),
                                                                                                           steps))
             break
-
         state = new_state
+
 env.render()
 
 plt.plot(numsteps)
