@@ -48,7 +48,7 @@ class PolicyNetwork(nn.Module):
         #np.random.choice(actions, p) gives you a non-uniform random sample from the actions array
         highest_prob_action = np.random.choice(self.num_actions, p=np.squeeze(probs.detach().numpy()))
         #torch.log(probs.squeeze(0)[highest_prob_action]) takes probs, unsqueezes it, searches for highest
-        #probability and computes its logarithm.
+        #probability and computes its logarithm. --> highest_prob_action comes from the gradient.
         log_prob = torch.log(probs.squeeze(0)[highest_prob_action])
 
         return highest_prob_action, log_prob
