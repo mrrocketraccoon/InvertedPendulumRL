@@ -76,7 +76,7 @@ def update_policy(policy_network, rewards, log_probs):
     for log_prob, Gt in zip(log_probs, discounted_rewards):
         policy_gradient.append(-log_prob * Gt)
     policy_network.optimizer.zero_grad() ###clears gradients of optimized tensor
-    # takes list of  tensors tensor(0.8492, grad_fn=<MulBackward0>), stacks them on top of each other
+     # takes list of  tensors tensor(0.8492, grad_fn=<MulBackward0>), stacks them on top of each other
     # and retrieves single tensor(0.1396, grad_fn=<SumBackward0>) with sum of list elements.
     policy_gradient = torch.stack(policy_gradient).sum()
     policy_gradient.backward()
