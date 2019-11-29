@@ -1,11 +1,11 @@
 import torch
+import torch.nn as nn
+import torch.optim as optim
+from torch.distributions.normal import Normal
 import random
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.utils import shuffle
-import torch.nn as nn
-import torch.optim as optim
-from torch.distributions.normal import Normal
 
 
 # if gpu is to be used
@@ -27,9 +27,7 @@ class DistributionNetwork(nn.Module):
         self.sigma = nn.ELU(12, 1)
         self.optimizer = optim.Adam(self.parameters(), lr=learning_rate)
 
-    def forward(self, state, action):
-        action = action.transpose(1,0)
-        x = torch.cat((state.to(torch.float32), action.to(torch.float32)), 1)
+    def forward(self, x):
         x = self.linear1(x)
         x = self.linear2(x)
         x = self.linear3(x)
@@ -38,16 +36,17 @@ class DistributionNetwork(nn.Module):
         sigma = self.sigma(x)+1
         return mu, sigma
 
-    def mdn_cost(self, mu, sigma, y):
+    def mdn_cost(self, mu, sigma):
         dist = Normal(torch.Tensor(mu).squeeze(), torch.Tensor(sigma).squeeze())
-        return -dist.log_prob(y)
+        return -dist.log_prob(dist)
 
-    def optimize(self,x):
-        input = Tensor(input).to(device)
+    def optimize(self):
+        x_batch = Tensor(x_batch).to(device)
         self.zero_grad()
-        mu_out, sigma_out = self.forward(input)
-        loss = self.mdn_cost(mu_out,sigma_out, x)
+        mu_out, sigma_out = self.forward(x_batch)
+        loss = self.mdn_cost(mu_out, sigma_out)
         loss.backward()
+        self.optimizer.step()
 ##########################################
 
 ###### HYPERPARAMETERS #######
@@ -76,19 +75,22 @@ for x in x_vals:
 x_arr, y_arr = shuffle(x_arr, y_arr)
 x_test = np.arange(1.1,5.1,0.2)
 batch_num = int(len(x_arr) / batch_size)
+x_batches = np.array_split(x_arr, batch_num)
+x_batches = torch.tensor(x_batches)
+y_batches = np.array_split(y_arr, batch_num)
+y_batches = torch.tensor(y_batches)
+
 ##############################
 
 ###### TRAINING #######
 source_distribution = DistributionNetwork()
 
-for epoch in epochs:
+for epoch in range(epochs):
     avg_cost = 0.0
-    x_batches, y_batches = shuffle(x_batches, y_batches)
+    #x_batches, y_batches = shuffle(x_batches, y_batches)
     for i in range(batch_num):
-        x_batch = np.expand_dims(x_batches[i], axis=1)
-        y_batch = np.expand_dims(y_batches[i], axis=1)
-
-        avg_cost += c / batch_num
+        source_distribution
+        avg_cost += batch_num
         if epoch % display_step == 0:
             print('Epoch {0} | cost = {1:.4f}'.format(epoch, avg_cost))
     print('Final cost: {0:.4f}'.format(avg_cost))

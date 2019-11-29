@@ -4,7 +4,6 @@
     <list default="true" id="95ac0847-880a-4fb5-9b04-f6bf3db317e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InvertedPendulumDDPG/SuperAwesomeEmpoweredPendulum.py" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedPendulumDDPG/SuperAwesomeEmpoweredPendulum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedPendulumPolicyGradient.py" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedPendulumPolicyGradient.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/distribution_network_torch.py" beforeDir="false" afterPath="$PROJECT_DIR$/distribution_network_torch.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,14 +16,26 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf>
+          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/InvertedPendulumDDPG/SuperAwesomeEmpoweredPendulum.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-300">
-                    <caret line="10" selection-start-line="10" selection-end-line="10" />
+                  <state relative-caret-position="499">
+                    <caret line="72" column="14" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
                     <folding>
                       <element signature="e#0#10#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/rl21-CartPole-DuelingDQN.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="2449">
+                    <caret line="322" lean-forward="true" selection-start-line="322" selection-end-line="322" />
+                    <folding>
+                      <element signature="e#160#172#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -40,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/InvertedPendulumPolicyGradient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+            <state relative-caret-position="33">
+              <caret line="64" column="27" lean-forward="true" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -49,25 +60,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/distribution_network_torch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="40" lean-forward="true" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+            <state relative-caret-position="374">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/rl21-CartPole-DuelingDQN.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2265">
-              <caret line="182" column="48" lean-forward="true" selection-start-line="182" selection-start-column="19" selection-end-line="182" selection-end-column="48" />
-              <folding>
-                <element signature="e#160#172#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,6 +86,7 @@
       <find>optimizer</find>
       <find>cost</find>
       <find>ops</find>
+      <find>x_batch</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -101,15 +101,15 @@
         <option value="$PROJECT_DIR$/InvertedPendulumDDPG/main.py" />
         <option value="$PROJECT_DIR$/InvertedPendulumPolicyGradient.py" />
         <option value="$PROJECT_DIR$/InvertedPendulumDDPG/SuperAwesomeEmpoweredPendulum.py" />
+        <option value="$PROJECT_DIR$/rl21-CartPole-DuelingDQN.py" />
         <option value="$PROJECT_DIR$/distribution_network_torch.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="158" />
-    <option name="width" value="1440" />
-    <option name="height" value="791" />
+    <option name="y" value="25" />
+    <option name="width" value="1920" />
+    <option name="height" value="1175" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -161,7 +161,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.SuperAwesomeEmpoweredPendulum">
+  <component name="RunManager" selected="Python.distribution_network_torch">
     <configuration name="SuperAwesomeEmpoweredPendulum" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="InvertedPendulumRL" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -176,6 +176,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/InvertedPendulumDDPG/SuperAwesomeEmpoweredPendulum.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="distribution_network_torch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="InvertedPendulumRL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/distribution_network_torch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -208,6 +230,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.distribution_network_torch" />
         <item itemvalue="Python.SuperAwesomeEmpoweredPendulum" />
       </list>
     </recent_temporary>
@@ -227,12 +250,13 @@
       <workItem from="1574185300316" duration="6798000" />
       <workItem from="1574432291241" duration="5863000" />
       <workItem from="1574683291791" duration="15694000" />
-      <workItem from="1574943005023" duration="2086000" />
+      <workItem from="1574943005023" duration="2124000" />
+      <workItem from="1575024230173" duration="18757000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33682000" />
+    <option name="totallyTimeSpent" value="52477000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -247,13 +271,13 @@
     <frame x="0" y="25" width="1920" height="1175" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26307365" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26627535" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33643988" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39888164" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33556405" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.38814533" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32898417" />
@@ -261,13 +285,13 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32898417" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3280522" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32898417" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3272901" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.33652008" />
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.32991612" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.32977587" />
+      <window_info anchor="right" id="SciView" order="3" visible="true" weight="0.32977587" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
@@ -315,11 +339,22 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/InvertedPendulumRL$SuperAwesomeEmpoweredPendulum.coverage" NAME="SuperAwesomeEmpoweredPendulum Coverage Results" MODIFIED="1574783659237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InvertedPendulumDDPG" />
+    <SUITE FILE_PATH="coverage/InvertedPendulumRL$SuperAwesomeEmpoweredPendulum.coverage" NAME="SuperAwesomeEmpoweredPendulum Coverage Results" MODIFIED="1575044673041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InvertedPendulumDDPG" />
+    <SUITE FILE_PATH="coverage/InvertedPendulumRL$distribution_network_torch.coverage" NAME="distribution_network_torch Coverage Results" MODIFIED="1575045628198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/InvertedPendulumRL$main.coverage" NAME="main Coverage Results" MODIFIED="1574433502656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/InvertedPendulumDDPG" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>x_batches.shape</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>x_batches.shape[0]</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>mdn_cost(0.5, 1.0, 2.0)</expression-string>
         <language-id>Python</language-id>
@@ -352,16 +387,6 @@
       </expression>
       <expression>
         <expression-string>x_arr.shape[0]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>x_arr.shape</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>x_arr.shape()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -409,20 +434,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="54" lean-forward="true" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/InvertedPendulumPolicyGradient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="23" column="3" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
+        <state relative-caret-position="33">
+          <caret line="64" column="27" lean-forward="true" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/rl21-CartPole-DuelingDQN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2449">
+          <caret line="322" lean-forward="true" selection-start-line="322" selection-end-line="322" />
+          <folding>
+            <element signature="e#160#172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/InvertedPendulumDDPG/SuperAwesomeEmpoweredPendulum.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="499">
+          <caret line="72" column="14" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -431,20 +473,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/distribution_network_torch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="40" lean-forward="true" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+        <state relative-caret-position="374">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rl21-CartPole-DuelingDQN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2265">
-          <caret line="182" column="48" lean-forward="true" selection-start-line="182" selection-start-column="19" selection-end-line="182" selection-end-column="48" />
-          <folding>
-            <element signature="e#160#172#0" expanded="true" />
           </folding>
         </state>
       </provider>
