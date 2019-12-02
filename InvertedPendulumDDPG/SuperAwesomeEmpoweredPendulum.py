@@ -65,7 +65,6 @@ mu = tf.layers.dense(inputs=layer, units=1)
 sigma = tf.layers.dense(inputs=layer, units=1, activation=lambda x: tf.nn.elu(x) + 1)
 
 cost = mdn_cost(mu, sigma, y)
-
 optimizer = tf.train.AdamOptimizer(learning_rate).minimize(cost)
 x_batches = np.array_split(x_arr, batch_num)
 y_batches = np.array_split(y_arr, batch_num)
